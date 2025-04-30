@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+
+<!-- saved from url=(0031)https://itshillsider.github.io/ -->
+<html lang="en"><head><meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<title>Vision Ford • Staff Portal</title>
+<style>
+    :root {
+        --vf-blue:#003768;
+        --vf-light:#f5f7fa;
+        --vf-accent:#0072c6;
+    }
+    body {
+        margin:0;
+        font-family:Segoe UI,Roboto,Helvetica,Arial,sans-serif;
+        background:var(--vf-light);
+        color:#333;
+    }
+    header {
+        background:var(--vf-blue);
+        color:#fff;
+        padding:12px 24px;
+        display:flex;
+        align-items:center;
+        gap:16px;
+    }
+    header img {
+        height:48px;
+    }
+    h1 {
+        font-size:1.5rem;
+        margin:0;
+    }
+    main {
+        max-width:600px;
+        margin:24px auto;
+        background:#fff;
+        padding:24px 32px 32px;
+        border-radius:12px;
+        box-shadow:0 4px 10px rgba(0,0,0,0.15);
+    }
+    h2 {
+        margin-top:0;
+        color:var(--vf-blue);
+    }
+    ul.links {
+        list-style:none;
+        padding:0;
+        margin:0;
+    }
+    ul.links li {
+        margin:12px 0;
+    }
+    ul.links a {
+        display:flex;
+        justify-content:space-between;
+        align-items:center;
+        text-decoration:none;
+        padding:14px 18px;
+        background:var(--vf-light);
+        border:2px solid var(--vf-blue);
+        border-radius:10px;
+        transition: background .2s ease;
+        font-weight:600;
+        color:var(--vf-blue);
+    }
+    ul.links a:hover {
+        background:var(--vf-accent);
+        color:#fff;
+    }
+    .vin {
+        font-family:monospace;
+        font-size:0.9rem;
+    }
+    .note {
+        margin-top:28px;
+        font-size:0.85rem;
+        color:#666;
+    }
+</style>
+<style>
+  body.dark-mode {
+    background-color: #121212;
+    color: #e0e0e0;
+  }
+  body.light-mode {
+    background-color: #ffffff;
+    color: #000000;
+  }
+  body.dark-mode header,
+  body.dark-mode nav {
+    background-color: #1f1f1f;
+  }
+  body.light-mode header,
+  body.light-mode nav {
+    background-color: #003768;
+  }
+  body.dark-mode main {
+    background-color: #1e1e1e;
+  }
+  body.light-mode main {
+    background-color: #fff;
+  }
+  body.dark-mode ul.links a {
+    background-color: #2c2c2c;
+    color: #90caf9;
+  }
+  body.dark-mode ul.links a:hover {
+    background-color: #0072c6;
+    color: #ffffff;
+  }
+  body.light-mode ul.links a {
+    background-color: #f5f7fa;
+    color: #003768;
+  }
+  body.light-mode ul.links a:hover {
+    background-color: #0072c6;
+    color: #ffffff;
+  }
+  .dark-toggle {
+    margin-left:auto;
+    cursor:pointer;
+    background:none;
+    border:none;
+    color:#90caf9;
+    font-size:1rem;
+  }
+</style>
+</head>
+<body class="dark-mode">
+<header>
+<img alt="Vision Ford logo" src="data:image/webp;base64,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"/>
+<h1>Vision Ford Staff Portal</h1>
+<button class="dark-toggle" onclick="toggleDarkMode()">🌞 Toggle Light</button></header>
+<main><h2>Staff Tools &amp; Shortcuts</h2><ul class="links"><li><a href="bronco-shortcuts.html" rel="noopener" target="_blank">🚙 Bronco Sport OASIS Shortcuts</a></li></ul></main>
+<script>
+function toggleDarkMode() {
+  const body = document.body;
+  if (body.classList.contains('dark-mode')) {
+    body.classList.remove('dark-mode');
+    body.classList.add('light-mode');
+    document.querySelector('.dark-toggle').textContent = '🌙 Toggle Dark';
+  } else {
+    body.classList.remove('light-mode');
+    body.classList.add('dark-mode');
+    document.querySelector('.dark-toggle').textContent = '🌞 Toggle Light';
+  }
+}
+</script>
+</body></html>
